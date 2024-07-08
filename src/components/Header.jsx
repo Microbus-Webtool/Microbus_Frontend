@@ -1,93 +1,123 @@
-import React from "react";
-import { useState, NavLink } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import MicroLogo from "../assets/logos/micro_logo_black.png";
 
 const Header = () => {
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar);
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const Hamburger = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="52"
-      height="24"
-      viewBox="0 0 52 24"
-    >
-      <g id="Group_9" data-name="Group 9" transform="translate(-294 -47)">
-        <rect
-          id="Rectangle_3"
-          data-name="Rectangle 3"
-          width="42"
-          height="4"
-          rx="2"
-          transform="translate(304 47)"
-          fill="#574c4c"
-        />
-        <rect
-          id="Rectangle_5"
-          data-name="Rectangle 5"
-          width="42"
-          height="4"
-          rx="2"
-          transform="translate(304 67)"
-          fill="#574c4c"
-        />
-        <rect
-          id="Rectangle_4"
-          data-name="Rectangle 4"
-          width="52"
-          height="4"
-          rx="2"
-          transform="translate(294 57)"
-          fill="#574c4c"
-        />
-      </g>
-    </svg>
-  );
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    // <div className="border border-solid border-black">this is the header</div>
-
-    <div className="flex justify-center">
-      <nav>
-        <div>
-          <div>
-            <Link to="/">
-              <img src="/assets/micro_logo_black.png" alt="Logo" />
-            </Link>
-          </div>
-
-          <div className="menu-icon" onClick={handleShowNavbar}>
-            <Hamburger />
-          </div>
-
-          <div className={`nav-elements ${showNavbar ? "active" : ""}`}>
-            <ul>
+    <div>
+      <nav className="px-4 lg:px-6 py-2.5 bg-black">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <a href="https://microbus-2rdg.vercel.app/workshops">
+            <img src={MicroLogo} className="h-10 sm:h-12" alt="Microbus Logo" />
+          </a>
+          <button
+            type="button"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            onClick={handleMenuToggle}
+          >
+            <svg
+              className="w-6 h-6"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <div
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
+            id="mobile-menu-2"
+          >
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
-                <Link to="/">Home</Link>
+                <Link
+                  to="/"
+                  className={`block py-2 pr-4 pl-3 rounded lg:p-0 ${
+                    location.pathname === "/"
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-400"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/#about" smooth>
+                <Link
+                  to="#about"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                    location.pathname === "#about"
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-400"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/events">Events</Link>
+                <Link
+                  to="/events"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                    location.pathname === "/events"
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-400"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
+                  Events
+                </Link>
               </li>
               <li>
-                <Link to="/workshops">Workshop</Link>
+                <Link
+                  to="/workshops"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                    location.pathname === "/workshops"
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-400"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
+                  Workshops
+                </Link>
               </li>
               <li>
-                <Link to="/teams">Team</Link>
+                <Link
+                  to="/teams"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                    location.pathname === "/teams"
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-400"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
+                  Team
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="content">{/* <!-- Your main content goes here --> */}</div>
     </div>
   );
 };
