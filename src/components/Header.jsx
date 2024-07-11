@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import MicroLogo from "../assets/logos/micro_logo_black.png";
+import MicroLogo from "../assets/logos/microbus-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +16,11 @@ const Header = () => {
 
   return (
     <div>
-      <nav className="px-4 lg:px-6 py-2.5 bg-black">
+      <nav className="px-4 lg:px-6 py-2.5 bg-white shadow dark:bg-gray-900">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <a href="https://microbus-2rdg.vercel.app/workshops">
+          <Link to="/">
             <img src={MicroLogo} className="h-10 sm:h-12" alt="Microbus Logo" />
-          </a>
+          </Link>
           <button
             type="button"
             className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"

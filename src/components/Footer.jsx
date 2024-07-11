@@ -1,4 +1,4 @@
-import logo from "../assets/microbus-logo.png";
+import logo from "../assets/logos/microbus-logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
