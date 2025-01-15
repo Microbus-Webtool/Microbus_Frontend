@@ -41,7 +41,7 @@ const Event = () => {
       {events.map((event, index) => (
         <div
           key={index}
-          className="bg-gradient-to-b from-purple-200 to-indigo-200 shadow-lg rounded-lg p-6 mb-8"
+          className="bg-gradient-to-b from-[#940cbb3d] via-[#55076c3d] to-[#8f2cf53d] shadow-lg rounded-lg p-6 mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500 mb-4">
             {event.title}
