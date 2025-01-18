@@ -4,7 +4,7 @@ import iot2 from "../assets/workshop/iot2.jpg";
 
 const Workshops = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-4">
+    <div className="flex flex-col items-center justify-center py-40">
       <div className="text-white text-center font-orbitron text-6xl font-extrabold uppercase mb-8">
         <h1>Workshop</h1>
       </div>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import MicroLogo from "../assets/logos/microbus-logo.png";
-
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,15 +15,15 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <nav className="px-4 lg:px-6 py-2.5 bg-white shadow dark:bg-gray-900">
+    <div className="fixed top-8 z-40 w-full">
+      <nav className="px-4 lg:px-6 py-2.5 bg-white bg-opacity-70 backdrop-blur-md shadow-md dark:bg-gray-900">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/">
             <img src={MicroLogo} className="h-10 sm:h-12" alt="Microbus Logo" />
           </Link>
           <button
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             onClick={handleMenuToggle}
           >
             <svg
@@ -46,8 +45,7 @@ const Header = () => {
           <div
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
-            id="mobile-menu-2"
+            } w-full lg:flex lg:w-auto`}
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
@@ -55,8 +53,8 @@ const Header = () => {
                   to="/"
                   className={`block py-2 pr-4 pl-3 rounded lg:p-0 ${
                     location.pathname === "/"
-                      ? "text-white"
-                      : "text-gray-700 dark:text-gray-400"
+                      ? "text-blue-600 dark:text-white"
+                      : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                   }`}
                   onClick={handleMenuItemClick}
                 >
@@ -66,10 +64,10 @@ const Header = () => {
               <li>
                 <Link
                   to="#about"
-                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                  className={`block py-2 pr-4 pl-3 lg:p-0 ${
                     location.pathname === "#about"
-                      ? "text-white"
-                      : "text-gray-700 dark:text-gray-400"
+                      ? "text-blue-600 dark:text-white"
+                      : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                   }`}
                   onClick={handleMenuItemClick}
                 >
@@ -79,10 +77,10 @@ const Header = () => {
               <li>
                 <Link
                   to="/events"
-                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                  className={`block py-2 pr-4 pl-3 lg:p-0 ${
                     location.pathname === "/events"
-                      ? "text-white"
-                      : "text-gray-700 dark:text-gray-400"
+                      ? "text-blue-600 dark:text-white"
+                      : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                   }`}
                   onClick={handleMenuItemClick}
                 >
@@ -92,10 +90,10 @@ const Header = () => {
               <li>
                 <Link
                   to="/workshops"
-                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                  className={`block py-2 pr-4 pl-3 lg:p-0 ${
                     location.pathname === "/workshops"
-                      ? "text-white"
-                      : "text-gray-700 dark:text-gray-400"
+                      ? "text-blue-600 dark:text-white"
+                      : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                   }`}
                   onClick={handleMenuItemClick}
                 >
@@ -105,10 +103,10 @@ const Header = () => {
               <li>
                 <Link
                   to="/teams"
-                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent lg:hover:text-white lg:p-0 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 ${
+                  className={`block py-2 pr-4 pl-3 lg:p-0 ${
                     location.pathname === "/teams"
-                      ? "text-white"
-                      : "text-gray-700 dark:text-gray-400"
+                      ? "text-blue-600 dark:text-white"
+                      : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                   }`}
                   onClick={handleMenuItemClick}
                 >
