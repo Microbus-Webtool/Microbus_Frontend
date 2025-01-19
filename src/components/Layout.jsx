@@ -8,8 +8,7 @@ const Layout = ({ children }) => {
     <div className="flex flex-col min-h-screen">
       <ScrollingBar />
       <Header />
-      <main className="flex-grow">{children}</main>
-      {/* {console.log(children)} */}
+      <main className="flex-grow pt-24">{children}</main>
       <Footer />
     </div>
   );
