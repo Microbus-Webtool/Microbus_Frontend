@@ -1,11 +1,11 @@
 import React from "react";
-import LinkedInLogo from "../assets/logos/linkedinBlack.png";
+import LinkedInLogo from "../assets/logos/linkedInBlack.png";
 import InstaLogo from "../assets/logos/instaBlack.png";
 import GitHubLogo from "../assets/logos/github.png";
 
 const Card = ({ image, name, designation, linkedinURL, instaURL, githubURL }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center p-4">
+    <div className="bg-transperant rounded-lg overflow-hidden flex flex-col items-center p-4 m-1">
       <img src={image} alt={name} className="w-32 h-32 rounded-full object-cover mb-4" />
       <div className="text-center">
         <h2 className="text-xl font-semibold text-gray-800">{name}</h2>

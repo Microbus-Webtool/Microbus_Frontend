@@ -58,7 +58,7 @@ const TeamPage = () => {
         <h3 className="heading1 text-4xl font-semibold bg-gradient-to-l from-teal-400 to-blue-900 bg-clip-text text-transparent">
           Developers
         </h3>
-        <div className="allCards flex flex-wrap items-center justify-start w-full">
+        <div className="allCards flex flex-wrap items-start justify-center gap-4 w-full">
           {developers.map((member, index) => (
             <Card
               key={index}
@@ -75,7 +75,7 @@ const TeamPage = () => {
         <h3 className="heading1 text-4xl font-semibold bg-gradient-to-l from-teal-400 to-blue-900 bg-clip-text text-transparent">
           Social Media
         </h3>
-        <div className="allCards flex flex-wrap items-center justify-start w-full">
+        <div className="allCards flex flex-wrap items-start justify-center w-full">
           {designers.map((member, index) => (
             <Card
               key={index}
@@ -92,7 +92,7 @@ const TeamPage = () => {
         <h3 className="heading1 text-4xl font-semibold bg-gradient-to-l from-teal-400 to-blue-900 bg-clip-text text-transparent">
           Sponsy Team
         </h3>
-        <div className="allCards flex flex-wrap items-center justify-start w-full">
+        <div className="allCards flex flex-wrap items-start justify-center w-full">
           {sponsers.map((member, index) => (
             <Card
               key={index}
